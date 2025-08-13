@@ -6,4 +6,4 @@
 - [x] git-4: Create first commit (priority: High)
 - [x] git-5: Set main branch (priority: High)
 - [x] git-6: Add remote origin (priority: High)
-- [ ] git-7: Push to GitHub repository (**IN PROGRESS**) (priority: High)
+- [x] git-7: Push to GitHub repository (priority: High)
