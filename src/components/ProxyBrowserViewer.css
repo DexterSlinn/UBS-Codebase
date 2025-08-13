@@ -1,0 +1,107 @@
+/* ProxyBrowserViewer styles */
+.proxy-browser-viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.proxy-browser-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.proxy-browser-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.proxy-url-display {
+  font-size: var(--font-size-xs);
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.proxy-browser-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+}
+
+.proxy-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  z-index: 1;
+}
+
+.proxy-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  z-index: 1;
+}
+
+.proxy-iframe {
+  flex: 1;
+  border: none;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.refresh-button, .back-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+  transition: background-color 0.2s ease;
+}
+
+.refresh-button {
+  background-color: #4a6da7;
+  color: white;
+}
+
+.refresh-button:hover {
+  background-color: #3a5d97;
+}
+
+.refresh-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.back-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}

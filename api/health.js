@@ -1,0 +1,15 @@
+function handler(req, res) {
+  console.log('🏥 Health check requested from:', req.headers['x-forwarded-for'] || req.connection.remoteAddress);
+  
+  res.status(200).json({ 
+    status: 'ok', 
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    memory: process.memoryUsage(),
+    environment: process.env.NODE_ENV || 'development',
+    platform: process.platform,
+    nodeVersion: process.version
+  });
+}
+
+module.exports = handler;

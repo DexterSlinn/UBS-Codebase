@@ -1,0 +1,17 @@
+[phases.setup]
+nixPkgs = ['nodejs_22', 'npm']
+
+[phases.install]
+cmds = ['npm ci']
+
+[phases.build]
+cmds = []
+
+[start]
+cmd = 'node index.js'
+
+[variables]
+NODE_ENV = 'production'
+NIXPACKS_NODE_VERSION = '22'
+NODE_OPTIONS = '--max-old-space-size=1024'
+# Force deployment trigger - Puppeteer config fixed

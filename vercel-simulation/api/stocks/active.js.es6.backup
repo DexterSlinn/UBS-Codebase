@@ -1,0 +1,50 @@
+export default function handler(req, res) {
+  // Add CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  try {
+    // Return fallback active stocks data
+    const fallbackStocks = [
+      { symbol: 'AAPL', name: 'Apple Inc.', price: '175.43', changePercent: '+2.15%' },
+      { symbol: 'MSFT', name: 'Microsoft Corporation', price: '378.85', changePercent: '+1.87%' },
+      { symbol: 'GOOGL', name: 'Alphabet Inc.', price: '142.56', changePercent: '+0.95%' },
+      { symbol: 'AMZN', name: 'Amazon.com Inc.', price: '153.32', changePercent: '-0.42%' },
+      { symbol: 'TSLA', name: 'Tesla Inc.', price: '248.91', changePercent: '+3.21%' },
+      { symbol: 'META', name: 'Meta Platforms Inc.', price: '334.78', changePercent: '+1.56%' },
+      { symbol: 'NVDA', name: 'NVIDIA Corporation', price: '478.23', changePercent: '+4.12%' },
+      { symbol: 'NFLX', name: 'Netflix Inc.', price: '445.67', changePercent: '-1.23%' },
+      { symbol: 'ADBE', name: 'Adobe Inc.', price: '567.89', changePercent: '+0.78%' },
+      { symbol: 'CRM', name: 'Salesforce Inc.', price: '267.45', changePercent: '+0.71%' },
+      { symbol: 'ORCL', name: 'Oracle Corporation', price: '112.34', changePercent: '+1.45%' },
+      { symbol: 'AMD', name: 'Advanced Micro Devices', price: '142.89', changePercent: '+2.30%' },
+      { symbol: 'INTC', name: 'Intel Corporation', price: '43.21', changePercent: '-0.89%' },
+      { symbol: 'PYPL', name: 'PayPal Holdings Inc.', price: '58.76', changePercent: '+1.12%' },
+      { symbol: 'UBER', name: 'Uber Technologies Inc.', price: '62.45', changePercent: '+2.67%' },
+      { symbol: 'SPOT', name: 'Spotify Technology S.A.', price: '178.90', changePercent: '-0.56%' },
+      { symbol: 'ZOOM', name: 'Zoom Video Communications', price: '67.23', changePercent: '+1.89%' },
+      { symbol: 'SQ', name: 'Block Inc.', price: '78.45', changePercent: '+3.45%' },
+      { symbol: 'SHOP', name: 'Shopify Inc.', price: '89.12', changePercent: '+2.11%' },
+      { symbol: 'ROKU', name: 'Roku Inc.', price: '45.67', changePercent: '-1.78%' }
+    ];
+    
+    res.json({
+      stocks: fallbackStocks,
+      source: 'vercel_serverless',
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('Error in active stocks endpoint:', error);
+    res.status(500).json({ error: 'Failed to fetch active stocks data' });
+  }
+}

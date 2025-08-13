@@ -1,0 +1,45 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/chat.js": {
+      "maxDuration": 30
+    },
+    "api/crypto-top20.js": {
+      "maxDuration": 30
+    },
+    "api/dashboard-chat.js": {
+      "maxDuration": 30
+    },
+    "api/health.js": {
+      "maxDuration": 30
+    },
+    "api/index.js": {
+      "maxDuration": 30
+    },
+    "api/market-overview.js": {
+      "maxDuration": 30
+    },
+    "api/test-crypto.js": {
+      "maxDuration": 30
+    },
+    "api/test.js": {
+      "maxDuration": 30
+    },
+    "api/crypto/top20.js": {
+      "maxDuration": 30
+    },
+    "api/stock/[symbol].js": {
+      "maxDuration": 30
+    },
+    "api/stocks/active.js": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/((?!api).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

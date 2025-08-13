@@ -1,0 +1,37 @@
+# Minimal .vercelignore - Only absolute essentials
+
+# Version control
+.git/
+
+# Environment files with secrets
+.env
+.env.local
+.env.*.local
+
+# Node modules (if using build step)
+node_modules/
+
+# Cache directories
+.cache/
+.next/
+.nuxt/
+
+# Log files
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Large font files (if not needed)
+*.woff
+*.woff2
+*.ttf
+*.otf

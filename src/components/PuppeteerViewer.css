@@ -1,0 +1,342 @@
+.puppeteer-viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 500px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+.puppeteer-action-bar {
+  display: flex;
+  padding: 10px 16px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.action-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.action-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.1s;
+  text-decoration: none;
+  color: white;
+  min-width: 140px;
+}
+
+.action-button:hover {
+  transform: translateY(-1px);
+}
+
+.action-button.try-again-button {
+  background-color: #1890ff;
+}
+
+.action-button.try-again-button:hover {
+  background-color: #40a9ff;
+}
+
+.action-button.back-to-iframe-button {
+  background-color: #52c41a;
+}
+
+.action-button.back-to-iframe-button:hover {
+  background-color: #73d13d;
+}
+
+.action-button.larger-viewport-button {
+  background-color: #722ed1;
+}
+
+.action-button.larger-viewport-button:hover {
+  background-color: #9254de;
+}
+
+.action-button.external-link-button {
+  background-color: #fa8c16;
+}
+
+.action-button.external-link-button:hover {
+  background-color: #ffa940;
+}
+
+.puppeteer-viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.puppeteer-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.puppeteer-controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.puppeteer-controls button:hover {
+  background-color: #f0f0f0;
+}
+
+.puppeteer-controls button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.puppeteer-controls button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.auto-refresh-button.active {
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+  color: #1890ff;
+}
+
+.puppeteer-status {
+  display: flex;
+  align-items: center;
+}
+
+.puppeteer-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: var(--font-size-sm);
+}
+
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #1890ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-spinner.large {
+  width: 32px;
+  height: 32px;
+  border-width: 3px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.auto-refresh-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #1890ff;
+  font-size: 14px;
+}
+
+.auto-refresh-indicator::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #1890ff;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.puppeteer-viewer-content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: auto;
+  position: relative;
+  min-height: 400px;
+  background-color: white;
+}
+
+.puppeteer-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  max-width: 90%;
+  width: 100%;
+  font-size: var(--font-size-sm);
+}
+
+.error-icon {
+  margin-bottom: 16px;
+  color: #ff4d4f;
+}
+
+.error-help-text {
+  color: #666;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.puppeteer-error-actions {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.puppeteer-error-actions h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.error-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.try-again-button,
+.back-to-iframe-button,
+.larger-viewport-button,
+.external-link-button {
+  padding: 8px 16px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+}
+
+.try-again-button:hover,
+.back-to-iframe-button:hover,
+.larger-viewport-button:hover,
+.external-link-button:hover {
+  background-color: #40a9ff;
+}
+
+.back-to-iframe-button {
+  background-color: #52c41a;
+}
+
+.back-to-iframe-button:hover {
+  background-color: #73d13d;
+}
+
+.larger-viewport-button {
+  background-color: #722ed1;
+}
+
+.larger-viewport-button:hover {
+  background-color: #9254de;
+}
+
+.external-link-button {
+  background-color: #fa8c16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.external-link-button:hover {
+  background-color: #ffa940;
+}
+
+.puppeteer-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #666;
+  font-size: var(--font-size-sm);
+}
+
+.screenshot-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.screenshot-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.screenshot-container:hover .screenshot-overlay {
+  opacity: 1;
+}
+
+.screenshot-info {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

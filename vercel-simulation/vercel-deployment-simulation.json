@@ -1,0 +1,573 @@
+{
+  "stats": {
+    "totalFiles": 106,
+    "copiedFiles": 63,
+    "ignoredFiles": 32,
+    "totalSize": 5002136,
+    "copiedSize": 4353866,
+    "ignoredSize": 648270,
+    "errors": []
+  },
+  "analysis": {
+    "structure": {
+      ".trae": {
+        "type": "directory",
+        "children": {
+          "documents": {
+            "type": "directory",
+            "children": {}
+          }
+        }
+      },
+      ".vercel": {
+        "type": "directory",
+        "children": {
+          "project.json": {
+            "type": "file",
+            "size": 145,
+            "path": ".vercel/project.json"
+          }
+        }
+      },
+      ".vercelignore": {
+        "type": "file",
+        "size": 838,
+        "path": ".vercelignore"
+      },
+      ".vercelignore.minimal": {
+        "type": "file",
+        "size": 404,
+        "path": ".vercelignore.minimal"
+      },
+      ".vscode": {
+        "type": "directory",
+        "children": {
+          "launch.json": {
+            "type": "file",
+            "size": 494,
+            "path": ".vscode/launch.json"
+          }
+        }
+      },
+      "Dockerfile": {
+        "type": "file",
+        "size": 946,
+        "path": "Dockerfile"
+      },
+      "Procfile": {
+        "type": "file",
+        "size": 18,
+        "path": "Procfile"
+      },
+      "api": {
+        "type": "directory",
+        "children": {
+          "chat.js": {
+            "type": "file",
+            "size": 4463,
+            "path": "api/chat.js"
+          },
+          "chat.js.es6.backup": {
+            "type": "file",
+            "size": 4445,
+            "path": "api/chat.js.es6.backup"
+          },
+          "crypto": {
+            "type": "directory",
+            "children": {
+              "top20.js": {
+                "type": "file",
+                "size": 3145,
+                "path": "api/crypto/top20.js"
+              },
+              "top20.js.es6.backup": {
+                "type": "file",
+                "size": 3133,
+                "path": "api/crypto/top20.js.es6.backup"
+              }
+            }
+          },
+          "crypto-top20.js": {
+            "type": "file",
+            "size": 3093,
+            "path": "api/crypto-top20.js"
+          },
+          "crypto-top20.js.es6.backup": {
+            "type": "file",
+            "size": 3081,
+            "path": "api/crypto-top20.js.es6.backup"
+          },
+          "dashboard-chat.js": {
+            "type": "file",
+            "size": 3993,
+            "path": "api/dashboard-chat.js"
+          },
+          "dashboard-chat.js.es6.backup": {
+            "type": "file",
+            "size": 3975,
+            "path": "api/dashboard-chat.js.es6.backup"
+          },
+          "health.js": {
+            "type": "file",
+            "size": 454,
+            "path": "api/health.js"
+          },
+          "health.js.es6.backup": {
+            "type": "file",
+            "size": 442,
+            "path": "api/health.js.es6.backup"
+          },
+          "index.js.backup": {
+            "type": "file",
+            "size": 229,
+            "path": "api/index.js.backup"
+          },
+          "index.js.es6.backup": {
+            "type": "file",
+            "size": 3481,
+            "path": "api/index.js.es6.backup"
+          },
+          "market-overview.js": {
+            "type": "file",
+            "size": 2673,
+            "path": "api/market-overview.js"
+          },
+          "market-overview.js.es6.backup": {
+            "type": "file",
+            "size": 2661,
+            "path": "api/market-overview.js.es6.backup"
+          },
+          "stock": {
+            "type": "directory",
+            "children": {
+              "[symbol].js": {
+                "type": "file",
+                "size": 2950,
+                "path": "api/stock/[symbol].js"
+              },
+              "[symbol].js.es6.backup": {
+                "type": "file",
+                "size": 2938,
+                "path": "api/stock/[symbol].js.es6.backup"
+              }
+            }
+          },
+          "stocks": {
+            "type": "directory",
+            "children": {
+              "active.js": {
+                "type": "file",
+                "size": 2745,
+                "path": "api/stocks/active.js"
+              },
+              "active.js.es6.backup": {
+                "type": "file",
+                "size": 2733,
+                "path": "api/stocks/active.js.es6.backup"
+              }
+            }
+          },
+          "test-crypto.js": {
+            "type": "file",
+            "size": 174,
+            "path": "api/test-crypto.js"
+          },
+          "test-crypto.js.es6.backup": {
+            "type": "file",
+            "size": 162,
+            "path": "api/test-crypto.js.es6.backup"
+          },
+          "test.js": {
+            "type": "file",
+            "size": 497,
+            "path": "api/test.js"
+          },
+          "test.js.es6.backup": {
+            "type": "file",
+            "size": 485,
+            "path": "api/test.js.es6.backup"
+          }
+        }
+      },
+      "convert-to-commonjs.js": {
+        "type": "file",
+        "size": 8054,
+        "path": "convert-to-commonjs.js"
+      },
+      "dist": {
+        "type": "directory",
+        "children": {
+          "assets": {
+            "type": "directory",
+            "children": {
+              "1751373226401-DCveoB-r.avif": {
+                "type": "file",
+                "size": 18464,
+                "path": "dist/assets/1751373226401-DCveoB-r.avif"
+              },
+              "AI R_D (19)-DJ1J5eRU.png": {
+                "type": "file",
+                "size": 23729,
+                "path": "dist/assets/AI R_D (19)-DJ1J5eRU.png"
+              },
+              "Frame 2087329384 (3)-62Iuz75O.jpg": {
+                "type": "file",
+                "size": 476163,
+                "path": "dist/assets/Frame 2087329384 (3)-62Iuz75O.jpg"
+              },
+              "UBS stick kite-W5Xwkh4Y.png": {
+                "type": "file",
+                "size": 49947,
+                "path": "dist/assets/UBS stick kite-W5Xwkh4Y.png"
+              },
+              "image 181--yNCBntB.png": {
+                "type": "file",
+                "size": 5932,
+                "path": "dist/assets/image 181--yNCBntB.png"
+              },
+              "image 182-C09Co270.png": {
+                "type": "file",
+                "size": 4912,
+                "path": "dist/assets/image 182-C09Co270.png"
+              },
+              "image 183 (1)-g1UYKF7T.png": {
+                "type": "file",
+                "size": 5374,
+                "path": "dist/assets/image 183 (1)-g1UYKF7T.png"
+              },
+              "image 183-uc7a2HWX.png": {
+                "type": "file",
+                "size": 5371,
+                "path": "dist/assets/image 183-uc7a2HWX.png"
+              },
+              "index-7YHLDCoB.css": {
+                "type": "file",
+                "size": 76975,
+                "path": "dist/assets/index-7YHLDCoB.css"
+              },
+              "index-CQXg1Orc.js": {
+                "type": "file",
+                "size": 244514,
+                "path": "dist/assets/index-CQXg1Orc.js"
+              },
+              "man-woman-group-collaboration-element-C0IXkZjJ.svg": {
+                "type": "file",
+                "size": 335567,
+                "path": "dist/assets/man-woman-group-collaboration-element-C0IXkZjJ.svg"
+              },
+              "scik deal-euWEFAZ5.png": {
+                "type": "file",
+                "size": 86618,
+                "path": "dist/assets/scik deal-euWEFAZ5.png"
+              },
+              "stick twint-O62Qikjf.svg": {
+                "type": "file",
+                "size": 38321,
+                "path": "dist/assets/stick twint-O62Qikjf.svg"
+              },
+              "stick-CwgVaElN.png": {
+                "type": "file",
+                "size": 61537,
+                "path": "dist/assets/stick-CwgVaElN.png"
+              },
+              "ubs sitkc-BBrvk0nL.svg": {
+                "type": "file",
+                "size": 88839,
+                "path": "dist/assets/ubs sitkc-BBrvk0nL.svg"
+              },
+              "woman-graph-arrow-DRda-mC4.svg": {
+                "type": "file",
+                "size": 25355,
+                "path": "dist/assets/woman-graph-arrow-DRda-mC4.svg"
+              }
+            }
+          },
+          "index.html": {
+            "type": "file",
+            "size": 602,
+            "path": "dist/index.html"
+          }
+        }
+      },
+      "documents": {
+        "type": "directory",
+        "children": {
+          "metadata.json": {
+            "type": "file",
+            "size": 2,
+            "path": "documents/metadata.json"
+          }
+        }
+      },
+      "index.html": {
+        "type": "file",
+        "size": 491,
+        "path": "index.html"
+      },
+      "minimal-vercelignore-generator.js": {
+        "type": "file",
+        "size": 9266,
+        "path": "minimal-vercelignore-generator.js"
+      },
+      "nixpacks.toml": {
+        "type": "file",
+        "size": 299,
+        "path": "nixpacks.toml"
+      },
+      "package.json": {
+        "type": "file",
+        "size": 1862,
+        "path": "package.json"
+      },
+      "package.json.module.backup": {
+        "type": "file",
+        "size": 1883,
+        "path": "package.json.module.backup"
+      },
+      "railway.json": {
+        "type": "file",
+        "size": 101,
+        "path": "railway.json"
+      },
+      "test-frontend-api.js": {
+        "type": "file",
+        "size": 1502,
+        "path": "test-frontend-api.js"
+      },
+      "test-payload.json": {
+        "type": "file",
+        "size": 82,
+        "path": "test-payload.json"
+      },
+      "test-url-construction.js": {
+        "type": "file",
+        "size": 2841,
+        "path": "test-url-construction.js"
+      },
+      "vercel-deployment-simulator.js": {
+        "type": "file",
+        "size": 15573,
+        "path": "vercel-deployment-simulator.js"
+      },
+      "vercel-deployment-test.js": {
+        "type": "file",
+        "size": 10807,
+        "path": "vercel-deployment-test.js"
+      },
+      "vercel-diagnostic.js": {
+        "type": "file",
+        "size": 10365,
+        "path": "vercel-diagnostic.js"
+      },
+      "vercel-ignore-analysis.json": {
+        "type": "file",
+        "size": 2675385,
+        "path": "vercel-ignore-analysis.json"
+      },
+      "vercel-ignore-analyzer.js": {
+        "type": "file",
+        "size": 8124,
+        "path": "vercel-ignore-analyzer.js"
+      },
+      "vercel.json": {
+        "type": "file",
+        "size": 825,
+        "path": "vercel.json"
+      },
+      "vercelignore-comparison.json": {
+        "type": "file",
+        "size": 3387,
+        "path": "vercelignore-comparison.json"
+      }
+    },
+    "criticalFiles": {
+      "apiFunction": [
+        "api/chat.js",
+        "api/crypto/top20.js",
+        "api/crypto-top20.js",
+        "api/dashboard-chat.js",
+        "api/health.js",
+        "api/market-overview.js",
+        "api/stock/[symbol].js",
+        "api/stocks/active.js",
+        "api/test-crypto.js",
+        "api/test.js"
+      ],
+      "frontend": [
+        "dist/assets/1751373226401-DCveoB-r.avif",
+        "dist/assets/AI R_D (19)-DJ1J5eRU.png",
+        "dist/assets/Frame 2087329384 (3)-62Iuz75O.jpg",
+        "dist/assets/UBS stick kite-W5Xwkh4Y.png",
+        "dist/assets/image 181--yNCBntB.png",
+        "dist/assets/image 182-C09Co270.png",
+        "dist/assets/image 183 (1)-g1UYKF7T.png",
+        "dist/assets/image 183-uc7a2HWX.png",
+        "dist/assets/index-7YHLDCoB.css",
+        "dist/assets/index-CQXg1Orc.js",
+        "dist/assets/man-woman-group-collaboration-element-C0IXkZjJ.svg",
+        "dist/assets/scik deal-euWEFAZ5.png",
+        "dist/assets/stick twint-O62Qikjf.svg",
+        "dist/assets/stick-CwgVaElN.png",
+        "dist/assets/ubs sitkc-BBrvk0nL.svg",
+        "dist/assets/woman-graph-arrow-DRda-mC4.svg",
+        "dist/index.html"
+      ],
+      "config": [
+        "package.json",
+        "vercel.json"
+      ]
+    },
+    "potentialIssues": [
+      {
+        "type": "large_file",
+        "file": "vercel-ignore-analysis.json",
+        "size": 2675385,
+        "message": "Large file (2.55 MB) may slow deployment"
+      }
+    ],
+    "recommendations": []
+  },
+  "validation": {
+    "vercelJson": {
+      "exists": true,
+      "valid": true,
+      "issues": [
+        "Function pattern 'api/index.js' doesn't match any file"
+      ],
+      "config": {
+        "buildCommand": "npm run build",
+        "outputDirectory": "dist",
+        "functions": {
+          "api/chat.js": {
+            "maxDuration": 30
+          },
+          "api/crypto-top20.js": {
+            "maxDuration": 30
+          },
+          "api/dashboard-chat.js": {
+            "maxDuration": 30
+          },
+          "api/health.js": {
+            "maxDuration": 30
+          },
+          "api/index.js": {
+            "maxDuration": 30
+          },
+          "api/market-overview.js": {
+            "maxDuration": 30
+          },
+          "api/test-crypto.js": {
+            "maxDuration": 30
+          },
+          "api/test.js": {
+            "maxDuration": 30
+          },
+          "api/crypto/top20.js": {
+            "maxDuration": 30
+          },
+          "api/stock/[symbol].js": {
+            "maxDuration": 30
+          },
+          "api/stocks/active.js": {
+            "maxDuration": 30
+          }
+        },
+        "rewrites": [
+          {
+            "source": "/((?!api).*)",
+            "destination": "/index.html"
+          }
+        ]
+      }
+    },
+    "packageJson": {
+      "exists": true,
+      "valid": true,
+      "issues": [],
+      "config": {
+        "name": "ubs-chatbot",
+        "private": true,
+        "version": "0.0.2",
+        "engines": {
+          "node": "22.x",
+          "npm": ">=10.0.0"
+        },
+        "scripts": {
+          "dev": "vite",
+          "build": "vite build",
+          "vercel-build": "vite build",
+          "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+          "preview": "vite preview",
+          "test": "vitest",
+          "test:ui": "vitest --ui",
+          "test:run": "vitest run",
+          "test:coverage": "vitest run --coverage",
+          "test:watch": "vitest --watch",
+          "server": "node index.js",
+          "proxy": "node proxy-server.js",
+          "backend": "node index.js",
+          "start": "node index.js"
+        },
+        "dependencies": {
+          "@mozilla/readability": "^0.6.0",
+          "axios": "^1.10.0",
+          "chart.js": "^4.5.0",
+          "compression": "^1.8.1",
+          "cors": "^2.8.5",
+          "dotenv": "^16.3.1",
+          "express": "^4.18.2",
+          "express-rate-limit": "^8.0.1",
+          "express-validator": "^7.2.1",
+          "groq-sdk": "^0.3.1",
+          "helmet": "^8.1.0",
+          "http-proxy-middleware": "^2.0.9",
+          "js-yaml": "^4.1.0",
+          "jsdom": "^26.1.0",
+          "lodash": "^4.17.21",
+          "lucide-react": "^0.536.0",
+          "multer": "^2.0.2",
+          "puppeteer": "^21.11.0",
+          "react": "^18.2.0",
+          "react-chartjs-2": "^5.3.0",
+          "react-dom": "^18.2.0"
+        },
+        "devDependencies": {
+          "@testing-library/jest-dom": "^6.6.4",
+          "@testing-library/react": "^16.3.0",
+          "@testing-library/user-event": "^14.6.1",
+          "@types/react": "^18.2.43",
+          "@types/react-dom": "^18.2.17",
+          "@vitejs/plugin-react": "^4.2.1",
+          "@vitest/ui": "^3.2.4",
+          "autoprefixer": "^10.4.16",
+          "eslint": "^8.55.0",
+          "eslint-plugin-react": "^7.33.2",
+          "eslint-plugin-react-hooks": "^4.6.0",
+          "eslint-plugin-react-refresh": "^0.4.5",
+          "postcss": "^8.4.32",
+          "tailwindcss": "^3.4.0",
+          "vercel": "^44.7.3",
+          "vite": "^5.0.8",
+          "vitest": "^3.2.4"
+        }
+      }
+    },
+    "apiStructure": {
+      "valid": true,
+      "issues": [],
+      "files": [
+        "chat.js",
+        "crypto-top20.js",
+        "dashboard-chat.js",
+        "health.js",
+        "market-overview.js",
+        "test-crypto.js",
+        "test.js",
+        "crypto/top20.js",
+        "stock/[symbol].js",
+        "stocks/active.js"
+      ]
+    }
+  },
+  "timestamp": "2025-08-12T15:57:31.885Z"
+}

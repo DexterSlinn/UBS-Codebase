@@ -1,0 +1,63 @@
+# Test Vercel deployment exclusions
+# Removed build config exclusions to test React compilation
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Source files (needed for Vite build process)
+# src/ - removed to allow Vite build access
+
+# Environment files
+.env*
+!.env.example
+
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+*.md
+docs/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Cache files
+.cache/
+knowledge-base/
+
+# Root level backend files (keep api/ directory)
+server.js
+/index.js
+enhancedAPI.js
+enhancedDocumentManager.js
+documentManager.js
+proxy-server.js
+minimal-test.js
+ultra-minimal.js
+
+# Test directories (but not api test files)
+__tests__/
+test/
+tests/
+
+# Build config files - COMMENTED OUT FOR TESTING
+# vite.config.js
+# tailwind.config.js
+# postcss.config.js
+# eslint.config.js
+# vitest.config.*
+# jest.config.*
+
+# Large font files
+*.woff
+*.woff2
+*.ttf
+*.otf
+*.eot

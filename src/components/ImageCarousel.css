@@ -1,0 +1,68 @@
+.image-carousel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid rgba(230, 0, 40, 0.05);
+  background: linear-gradient(to bottom, white, rgba(250, 250, 250, 0.9)) padding-box,
+              linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(230, 0, 40, 0.1)) border-box;
+}
+
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  overflow: visible; /* Changed from hidden to allow the text box to be visible outside container */
+  border-radius: 8px;
+  background-color: white;
+}
+
+.carousel-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  /* Fixed dimensions to prevent resizing during rotation */
+  min-width: 300px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+/* Special styling for the UBS sitkc.svg image - 75% larger */
+.enlarged-svg {
+  transform: scale(1.75); /* Increase size by 75% */
+  transform-origin: center; /* Scale from the center */
+}
+
+/* Crop the top 15% of the stick twint.svg image and scale to compensate */
+.cropped-twint-svg {
+  clip-path: inset(15% 0 0 0); /* Crop top 15% */
+  transform: scale(1.18); /* Scale up to compensate for cropped area */
+  transform-origin: center; /* Scale from the center */
+}
+
+/* Navigation buttons and indicators removed */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-image-container {
+    height: 150px;
+    min-width: 250px;
+    max-width: 250px;
+  }
+}

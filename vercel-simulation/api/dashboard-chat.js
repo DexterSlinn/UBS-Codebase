@@ -1,0 +1,109 @@
+const { Groq  } = require("groq-sdk");
+
+// Initialize Groq client
+let groq = null;
+if (process.env.GROQ_API_KEY) {
+  try {
+    groq = new Groq({
+      apiKey: process.env.GROQ_API_KEY
+    });
+  } catch (error) {
+    console.error('Failed to initialize Groq client:', error);
+  }
+}
+
+// Dashboard chat system instructions
+const dashboardSystemInstructions = {
+  role: 'system',
+  content: `You are Marcel, a knowledgeable financial and dashboard assistant. Provide direct, helpful answers about financial markets, dashboard tools, and investment topics.
+
+Your responses should be:
+- BRIEF: Maximum 2-3 sentences per response
+- DIRECT: Answer questions immediately without disclaimers
+- INFORMATIVE: Provide useful financial and market information
+- PROFESSIONAL: Maintain a helpful, expert tone
+- PRACTICAL: Give actionable insights and explanations
+
+You can discuss and explain:
+- **Market Sectors**: Technology, Healthcare, Financial Services, Consumer Cyclical, Energy, Real Estate, Industrials, Materials, and their performance
+- **Investment Topics**: Stocks, cryptocurrencies, ETFs, funds, market trends, and analysis
+- **Dashboard Features**: Cryptocurrency dashboard, active stocks, stock search, market news, sector monitoring, auto-refresh settings
+- **Financial Concepts**: Market movements, percentage changes, price analysis, trading volumes, and investment strategies
+- **Banking Services**: Account types, investment products, wealth management, and financial planning
+- **Market Data**: Real-time prices, charts, news updates, and sector performance metrics
+
+Answer questions about any financial topic, market sector, or dashboard feature directly and informatively. Provide context and explanations that help users understand markets and make informed decisions.`
+};
+
+async function handler(req, res) {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+  
+  if (req.method !== 'POST') {
+    res.status(405).json({ error: 'Method not allowed' });
+    return;
+  }
+  
+  try {
+    console.log('Received dashboard chat request:', req.body);
+    const { messages } = req.body;
+    
+    // Create customized system instructions for dashboard
+    let customDashboardInstructions = { ...dashboardSystemInstructions };
+    
+    // Note: Document search not available in serverless environment
+    let contextSource = 'general_knowledge';
+    
+    // Add dashboard-specific system instructions
+    const messagesWithInstructions = [customDashboardInstructions, ...messages];
+    
+    // Check if Groq client is available
+    if (!groq) {
+      return res.status(503).json({
+        error: 'AI service temporarily unavailable',
+        message: 'The dashboard chat service is currently unavailable. Please try again later.'
+      });
+    }
+    
+    const chatCompletion = await groq.chat.completions.create({
+      messages: messagesWithInstructions,
+      model: "llama3-8b-8192", // Faster 8B model for improved response speed
+      temperature: 0.4, // Lower temperature for more consistent responses
+      max_tokens: 200, // Reduced token limit as requested
+      top_p: 0.95 // More focused responses
+    });
+    
+    console.log('Dashboard Groq response received');
+    
+    const response = {
+      choices: [{
+        message: {
+          role: 'assistant',
+          content: chatCompletion.choices[0].message.content
+        }
+      }],
+      contextSource: contextSource,
+      serverless: true
+    };
+    
+    // Log the information source used
+    console.log('Dashboard response generated successfully');
+    
+    res.json(response);
+  } catch (error) {
+    console.error('Dashboard chat error:', error);
+    res.status(500).json({ 
+      error: error.message,
+      name: error.name
+    });
+  }
+}
+
+module.exports = handler;

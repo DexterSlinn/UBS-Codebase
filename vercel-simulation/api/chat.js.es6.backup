@@ -1,0 +1,105 @@
+import { Groq } from 'groq-sdk';
+
+// Initialize Groq client
+let groq = null;
+if (process.env.GROQ_API_KEY) {
+  try {
+    groq = new Groq({
+      apiKey: process.env.GROQ_API_KEY
+    });
+  } catch (error) {
+    console.error('Failed to initialize Groq client:', error);
+  }
+}
+
+// System instructions for the chatbot
+const systemInstructions = {
+  role: 'system',
+  content: `You are Marcel the UBS AI Guide, a professional and knowledgeable AI designed EXCLUSIVELY to help with UBS Switzerland banking and financial services.
+
+STRICT OPERATIONAL BOUNDARIES:
+1. EXCLUSIVE UBS SWITZERLAND FOCUS: You MUST ONLY provide information about UBS Switzerland services, products, and offerings.
+2. TOPIC RESTRICTIONS: If asked about topics outside UBS Switzerland services, you MUST respond with: "I'm specialized exclusively in UBS Switzerland services. For information about [topic], I recommend consulting with a UBS Switzerland financial advisor or visiting our website. How can I help you with UBS Switzerland banking or investment services today?"
+3. WEBSITE REFERRAL: Whenever appropriate, direct users to the official UBS Switzerland website (https://www.ubs.com/ch/en.html) or relevant subpages.
+4. UBS EXPERTISE: Provide accurate information about UBS Switzerland services, investment strategies, wealth management, and financial advice relevant to Swiss clients.
+5. TONE: Maintain a professional, courteous, and helpful tone at all times.
+6. COMPLIANCE: Never provide specific investment recommendations or financial advice for individual circumstances.
+7. LIMITATIONS: Clearly state when a question is outside your knowledge scope or requires a human UBS financial advisor.
+8. PRIVACY: Never ask for or store personal financial information, account numbers, or passwords.
+9. CLARITY: Use clear, concise language and avoid financial jargon when possible.
+10. STRUCTURE: For complex responses, use bullet points or numbered lists to improve readability.
+11. FINANCIAL TERM HIGHLIGHTING: When providing UBS-related information, highlight complex financial terms by wrapping them in **bold formatting**.
+12. ACCOUNT PROMOTION: When relevant, subtly highlight the benefits of opening an account with UBS Switzerland.
+13. KEY4 BANKING PRIORITY: When users ask about accounts or banking services for young adults, PRIORITIZE recommending UBS key4 banking packages.
+14. PAGE REFERENCES: When referring to specific UBS pages, use the format [View page: URL] to create clickable links.`
+};
+
+export default async function handler(req, res) {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+  
+  if (req.method !== 'POST') {
+    res.status(405).json({ error: 'Method not allowed' });
+    return;
+  }
+  
+  try {
+    console.log('Received chat request:', req.body);
+    const { messages, isBuildMode, buildModeConfig } = req.body;
+    
+    // Create customized system instructions
+    let customSystemInstructions = { ...systemInstructions };
+    
+    // Note: Document search not available in serverless environment
+    let contextSource = 'general_knowledge';
+    
+    // Add system instructions to messages
+    const messagesWithInstructions = [customSystemInstructions, ...messages];
+    
+    // Check if Groq client is available
+    if (!groq) {
+      return res.status(503).json({
+        error: 'AI service temporarily unavailable',
+        message: 'The chat service is currently unavailable. Please check your API configuration.'
+      });
+    }
+    
+    const chatCompletion = await groq.chat.completions.create({
+      messages: messagesWithInstructions,
+      model: "llama3-70b-8192",
+      temperature: 0.7,
+      max_tokens: 1000,
+      top_p: 0.95
+    });
+    
+    console.log('Groq response received');
+    
+    const response = {
+      choices: [{
+        message: {
+          role: 'assistant',
+          content: chatCompletion.choices[0].message.content
+        }
+      }],
+      contextSource: contextSource,
+      serverless: true
+    };
+    
+    console.log('Chat response generated successfully');
+    
+    res.json(response);
+  } catch (error) {
+    console.error('Chat error:', error);
+    res.status(500).json({ 
+      error: error.message,
+      name: error.name
+    });
+  }
+}

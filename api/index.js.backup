@@ -1,0 +1,3 @@
+// Backup of the original complex Express app
+// This file contains the full Express application that was migrated from Railway
+// It includes all routes, middleware, and functionality but may not work well with Vercel serverless
